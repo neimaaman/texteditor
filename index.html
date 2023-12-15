@@ -8,31 +8,89 @@
             <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body>
-        <h1 class="text-7x1 bg-red-200 text-center">
+        <div class=" text-center text-purple-300 mt-8">
+          <h1 style="font-weight: bold;" class="text-5xl">
             Text Editor
-        </h1>
-        <button
-            onclick="document.getElementById('compose').classList.toggle('text-red-500')">
-            Red
-        </button>
-        <button
-            onclick="document.getElementById('compose').style.fontSize= '36px'">
-            font Sizer
-        </button>
+          </h1>
+                <!-- i can't make the text editor bigger  -->
+        </div><br><br>
 
-        <button
-            onclick="document.getElementById('compose').style.fontWeight='bold'">
-            B
+        <div class="text-center ">
+            <button class="border-2 border-violet-200 rounded px-1 "
+                onclick="document.getElementById('textarea').classList.toggle('text-red-500')">
+                Red
+            </button>
+            <button class="border-2 border-violet-200 rounded px-1 "
+                onclick="document.getElementById('textarea').classList.toggle('7xl')">
+                font Sizer
+            </button>
+            <!-- what is the purpose of the above two lines -->
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').classList.toggle('font-bold')">   
+                Bold
 
-        </button>
+            </button>
 
-        <button 
-            onclick="document.getElementById('compose').style.textDecorationLine= 'underline'">
-            U
-        </button>
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').classList.toggle('italic')">
+                Italic
+            </button>
 
-        <p id="compose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima blanditiis asperiores, natus autem veritatis voluptas error sunt,
-                        debitis consequuntur alias incidunt mollitia facilis cum, dolorem dolorum adipisci! Quasi, dolore inventore!</p>
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textDecorationLine= 'underline'">
+                Underline
+            </button>
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textAlign= 'right'">
+                Align right
+            </button>
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textAlign= 'left'">
+                Align Left
+            </button>
 
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textAlign = 'center'"> 
+                Center
+            </button>
+
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textTransform = 'uppercase'">
+                Upper Case
+            </button>
+            <!-- purpose of uppercase and lower case -->
+
+            <button class="border-2 border-violet-200 rounded px-1"
+                onclick="document.getElementById('textarea').style.textTransform = 'lowercase'">
+                Lower Case
+            </button>
+            <button class="border-2 border-violet-200 rounded px-1 "
+                onclick="document.getElementById('textarea').style.textTransform = 'capitalize'">
+                Capitalize
+                <!-- the purpose of capitalize when i pressed it doesnt work  -->
+            </button>
+
+            <button class=" border-2 border-violet-200 rounded px-1" 
+                onclick="regularempty()">Clear 
+            </button>
+        </div>
+
+        <div class="mx-auto w-96 h-96">
+        <textarea class=" border-4 border-[#601f60]  mt-8"  id="textarea" cols="50" rows="15" placeholder="text here...." class="bg-green-100"></textarea>
+    </div>
+
+        
+        <p id="compose"></p>
+        <script>
+            function regularempty() {
+                // empty value
+                document.getElementById('textarea').value = ''
+                document.getElementById('textarea').style.textAlign = 'left'
+                document.getElementById('textarea').style.textDecorationLine = 'none'
+                document.getElementById('textarea').style.fontStyle = 'lowercase'
+                document.getElementById('textarea').style.fontStyle = 'normal'
+            }
+            
+        </script>
     </body>
 </html>
